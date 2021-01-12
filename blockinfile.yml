@@ -1,0 +1,12 @@
+---
+- hosts: demo
+  tasks: 
+        - blockinfile:
+                owner: apache
+                group: apache
+                insertbefore: BOF
+                path: /var/www/html/index.html
+                block: |
+                        Welcome To my World !
+                        This is Ansible Playbook which usues blockinfile function.
+                

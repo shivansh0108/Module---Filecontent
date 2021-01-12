@@ -1,0 +1,14 @@
+---
+- hosts: demo
+  tasks:
+        - name: Find the files
+          find:
+                path: /opt/data
+                age: 2m
+                size: 1m
+                recurse: yes
+          register: file
+
+        - name: Copy the files
+          command: "cp {{ item.path }} /opt"
+          with_items: "{{ file.files }}"

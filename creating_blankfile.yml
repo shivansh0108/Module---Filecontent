@@ -1,0 +1,5 @@
+---
+- hosts: demo
+  tasks:
+        - name: Create a blank file perm.txt
+          file: path=/opt/data/perm.txt mode=0640 state=touch

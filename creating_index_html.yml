@@ -1,0 +1,7 @@
+---
+- hosts: demo
+  tasks: 
+        - lineinfile:
+                path: /var/www/html/index.html
+                line: 'This line was added using Ansible lineinfile module !!'
+                create: yes
